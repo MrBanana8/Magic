@@ -1,0 +1,9 @@
+name: Magic
+version: ${project.version}
+main: me.notbanana8.magic.Magic
+api-version: 1.19
+authors: [ NotBanana8 ]
+description: A magical plugin
+
+commands:
+  magic:
