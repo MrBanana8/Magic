@@ -64,13 +64,8 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>Maven Central</id>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-        <!-- Use this repository ONLY if you need snapshot builds -->
-        <repository>
-            <id>elMakers</id>
-            <url>http://maven.elmakers.com/repository/</url>
+            <id>sinndev-repo</id>
+            <url>http://repo.sinndev.com/content/groups/public/</url>
         </repository>
     </repositories>
 

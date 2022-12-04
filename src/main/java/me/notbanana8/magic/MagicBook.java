@@ -19,11 +19,11 @@ public class MagicBook implements Listener {
         Player player = event.getPlayer();
         ItemStack hand = player.getInventory().getItemInMainHand();
         if (hand.getItemMeta().getDisplayName().contains(ChatColor.GOLD + "[SoulFire]")) {
-            particleBeam(player);
+            SoulFireSpell.soulFire(player);
         }
         if (!hand.getItemMeta().getDisplayName().contains(ChatColor.LIGHT_PURPLE + "Magic Book")) return;
         if(!player.isSneaking()) return;
-        if(!event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) return;
+        if(!event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK)) return;
         player.openInventory(new SpellSelector ().inv);
 
 

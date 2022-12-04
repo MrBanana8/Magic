@@ -14,7 +14,6 @@ public final class Magic extends JavaPlugin{
         Bukkit.getServer().getPluginManager().registerEvents(new MagicBook(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new SpellSelector(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new BlinkSpell(), this);
-        Bukkit.getServer().getPluginManager().registerEvents(new ExampleSpell(), this);
     }
 
     @Override
