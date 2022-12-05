@@ -27,8 +27,10 @@ public class SpellSelector implements Listener {
     }
 
     public void initializeItems() {
-        inv.setItem(0,createGuiItem(Material.SOUL_SOIL, ChatColor.BLUE + "Soul Fire",
-                ChatColor.GRAY +"SoulFire Beam.", ""));
+        inv.setItem(0,createGuiItem(Material.BLAZE_POWDER, ChatColor.RED + "Fire",
+                ChatColor.GRAY +"Shoots a " + ChatColor.RED + "Fire " + ChatColor.GRAY + "beam.",ChatColor.GRAY + "Ignites anything that you shoot at"));
+        inv.addItem(createGuiItem(Material.ENDER_EYE, ChatColor.LIGHT_PURPLE + "Blink",
+                ChatColor.GRAY +"Teleports you " + ChatColor.GREEN + "8 blocks.", ""));
         inv.setItem(8,createGuiItem(Material.PAPER, ChatColor.WHITE + "NONE",
                 ChatColor.GRAY +"No Spell", ""));
 
@@ -44,9 +46,16 @@ public class SpellSelector implements Listener {
         event.setCancelled(true);
 
         switch (event.getCurrentItem().getType()){
-            case SOUL_SOIL:
-                meta.getLore().set(1,ChatColor.GRAY + "Selected Spell: " + ChatColor.LIGHT_PURPLE +"Soul Fire");
-                meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Magic Book " + ChatColor.GOLD + "[SoulFire]");
+            case BLAZE_POWDER:
+                meta.getLore().set(1,ChatColor.GRAY + "Selected Spell: " + ChatColor.LIGHT_PURPLE +"Fire");
+                meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Magic Book " + ChatColor.GOLD + "[Fire]");
+                player.getInventory().getItemInMainHand().setItemMeta(meta);
+                player.updateInventory();
+                player.closeInventory();
+                break;
+            case ENDER_EYE:
+                meta.getLore().set(1,ChatColor.GRAY + "Selected Spell: " + ChatColor.LIGHT_PURPLE +"Blink");
+                meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Magic Book " + ChatColor.GOLD + "[Blink]");
                 player.getInventory().getItemInMainHand().setItemMeta(meta);
                 player.updateInventory();
                 player.closeInventory();

@@ -1,5 +1,6 @@
 package me.notbanana8.magic;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -16,12 +17,13 @@ public class BlinkSpell implements Listener {
     public void onRightClick(PlayerInteractEvent event){
         Player player = event.getPlayer();
         Location location = player.getLocation();
+        ItemStack hand = player.getInventory().getItemInMainHand();
         float playeryaw = player.getEyeLocation().getYaw();
         float playerpitch = player.getEyeLocation().getPitch();
         Location blockTarget = player.getTargetBlock(null, 8).getLocation();
         Location blockTargetHighest = player.getWorld().getHighestBlockAt(blockTarget.getBlockX(), blockTarget.getBlockZ()).getLocation();
-        if(!event.getAction().equals(Action.RIGHT_CLICK_AIR)) return;
-        if(!player.getInventory().getItemInMainHand().equals(new ItemStack(Material.STICK))) return;
+        if(!event.getAction().equals((Action.LEFT_CLICK_AIR))) return;
+        if(!hand.getItemMeta().getDisplayName().contains(ChatColor.GOLD + "[Blink]")) return;
         location.add(0,1,0);
         blockTarget.setYaw(playeryaw);
         blockTarget.setPitch(playerpitch);
@@ -29,4 +31,5 @@ public class BlinkSpell implements Listener {
         player.playSound(location, Sound.ENTITY_ENDERMAN_TELEPORT,5,5);
 
     }
+
 }
