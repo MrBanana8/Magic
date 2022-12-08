@@ -13,14 +13,14 @@ public class ItemManager {
 
     //Magic Stuff
     public static ItemStack magichat(){
-        ItemStack magichat = new ItemStack(Material.PAPER);
+        ItemStack magichat = new ItemStack(Material.LEATHER_HORSE_ARMOR);
         ItemMeta meta = magichat.getItemMeta();
         List<String> lore = new ArrayList<>();
 
         meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Magic Hat");
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        meta.setCustomModelData(1);
+        meta.setCustomModelData(2);
 
         lore.add("");
         lore.add("§7Does Nothing");

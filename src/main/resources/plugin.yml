@@ -7,3 +7,4 @@ description: A magical plugin
 
 commands:
   magic:
+    description: "The main magic command"
